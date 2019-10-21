@@ -5,21 +5,43 @@
 //  Created by Brandon Clark on 10/7/19.
 //  Copyright © 2019 cyanware. All rights reserved.
 //
-
+import Foundation
 import UIKit
+import CoreData
 
-
-class Stash {
-    var stashName: String?
-    var stashTotal: Int32?
-    var stashCurrency: String?
-    var stashInitDate: Date?
+class Stash: NSManagedObject {
+        
+    @NSManaged var stashName: String
+    @NSManaged var stashTotal: Int32
+    @NSManaged var stashCurrency: String
+    @NSManaged va r stashInitDate: Date
+    
     
     // Create our dictionary to hold the value for the stash
-    var dollarCounts:[String:Int] = ["Ones": 0, "Fives": 0, "Tens": 0, "Twenties": 0, "Hundreds": 0]
-    var dollarValues:[String:Int] = ["Ones": 1, "Fives": 5, "Tens": 10, "Twenties": 20, "Hundreds": 100]
+    @NSManaged var dollarCounts : [Int32]
     
+    
+    func getTotal()-> Int32 {
+        
+        let oneTotal: Int32 = self.dollarCounts[0] * 1
+        let fiveTotal: Int32 = self.dollarCounts[1] * 5
+        let tenTotal: Int32 = self.dollarCounts[2] * 10
+        let twentyTotal: Int32 = self.dollarCounts[3] * 20
+        let fiftyTotal: Int32 = self.dollarCounts[4] * 50
+        let hundredTotal: Int32 = self.dollarCounts[5] * 100
+        
+        let finalTotal = oneTotal + fiveTotal + tenTotal + twentyTotal + fiftyTotal + hundredTotal
+        return finalTotal
+        
+    }
     //
     
+    init(name : String, total : Int32, currencyType: String, counts: [Int32] ) {
+        self.stashName = name
+        self.stashTotal = total
+        self.stashCurrency = currencyType
+        self.dollarCounts = counts
+    }
     
+
   }

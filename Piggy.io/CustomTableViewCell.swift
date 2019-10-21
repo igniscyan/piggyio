@@ -12,6 +12,8 @@ class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var stashNameLabel: UILabel!
     @IBOutlet weak var stashCashLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

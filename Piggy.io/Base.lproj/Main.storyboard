@@ -57,9 +57,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stash Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXm-Oj-vOr">
-                                            <rect key="frame" x="20" y="48" width="93" height="41"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Stash Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXm-Oj-vOr">
+                                            <rect key="frame" x="32" y="48" width="132" height="41"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="132" id="0wU-i2-9LQ"/>
+                                                <constraint firstAttribute="width" secondItem="ZXm-Oj-vOr" secondAttribute="height" multiplier="16:9" id="GBZ-3l-7uz"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -73,6 +76,9 @@
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.63921568630000003" green="0.78823529410000004" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="ZXm-Oj-vOr" firstAttribute="leading" secondItem="Bnp-45-UIq" secondAttribute="leadingMargin" constant="12" id="Vwd-hF-B5j"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="stashCashLabel" destination="0gi-wb-9KF" id="XnP-v7-jUI"/>
@@ -81,7 +87,7 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="JA2-Ki-awG" id="kQD-jj-2PW"/>
+                            <outlet property="dataSource" destination="JA2-Ki-awG" id="tsR-j8-jye"/>
                             <outlet property="delegate" destination="JA2-Ki-awG" id="l60-zf-fPe"/>
                         </connections>
                     </tableView>
