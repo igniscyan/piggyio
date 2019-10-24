@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -17,8 +18,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let fetchRequest: NSFetchRequest<Stash> = Stash.fetchRequest()
         // Do any additional setup after loading the view.
+        do {
+        let stash = try PersistenceService.context.fetch(fetchRequest)
+            self.stash = stash
+            self.tableView.reloadData()
+        }   catch {print("Error fetching context")}
     }
     
     @IBAction func onPlusTapped() {
@@ -28,6 +34,10 @@ class ViewController: UIViewController {
         }
         alert.addTextField { (textField) in
             textField.placeholder = "Amount"
+            textField.keyboardType = .numberPad
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "1s"
             textField.keyboardType = .numberPad
         }
         let action = UIAlertAction(title: "Post", style: .default) { (_) in
