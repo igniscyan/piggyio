@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		902EE0EB234B355D009F2DD2 /* Stash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902EE0EA234B355D009F2DD2 /* Stash.swift */; };
-		902EE0ED234B3EF9009F2DD2 /* Ledger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902EE0EC234B3EF9009F2DD2 /* Ledger.swift */; };
-		903D739C234AE29B0023C1E5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903D739B234AE29B0023C1E5 /* TableViewController.swift */; };
-		903D739E234B248E0023C1E5 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903D739D234B248E0023C1E5 /* CustomTableViewCell.swift */; };
+		903E8D0F2360BEE20058CECC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D0E2360BEE20058CECC /* ViewController.swift */; };
+		903E8D112360C1120058CECC /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D102360C1120058CECC /* PersistenceService.swift */; };
+		903E8D132360C7060058CECC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D122360C7060058CECC /* SceneDelegate.swift */; };
+		903E8D162361230A0058CECC /* Stash+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D142361230A0058CECC /* Stash+CoreDataClass.swift */; };
+		903E8D172361230A0058CECC /* Stash+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D152361230A0058CECC /* Stash+CoreDataProperties.swift */; };
 		90C642A3234AC5C1008BC88D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C642A2234AC5C1008BC88D /* AppDelegate.swift */; };
-		90C642A5234AC5C1008BC88D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C642A4234AC5C1008BC88D /* SceneDelegate.swift */; };
 		90C642AA234AC5C1008BC88D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90C642A8234AC5C1008BC88D /* Main.storyboard */; };
 		90C642AD234AC5C1008BC88D /* Piggy_io.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90C642AB234AC5C1008BC88D /* Piggy_io.xcdatamodeld */; };
 		90C642AF234AC5C3008BC88D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C642AE234AC5C3008BC88D /* Assets.xcassets */; };
@@ -20,13 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		902EE0EA234B355D009F2DD2 /* Stash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stash.swift; sourceTree = "<group>"; };
-		902EE0EC234B3EF9009F2DD2 /* Ledger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ledger.swift; sourceTree = "<group>"; };
-		903D739B234AE29B0023C1E5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		903D739D234B248E0023C1E5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		903E8D0E2360BEE20058CECC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		903E8D102360C1120058CECC /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		903E8D122360C7060058CECC /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		903E8D142361230A0058CECC /* Stash+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stash+CoreDataClass.swift"; sourceTree = "<group>"; };
+		903E8D152361230A0058CECC /* Stash+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stash+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		90C6429F234AC5C1008BC88D /* Piggy.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piggy.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C642A2234AC5C1008BC88D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90C642A4234AC5C1008BC88D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		90C642A9234AC5C1008BC88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90C642AC234AC5C1008BC88D /* Piggy_io.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Piggy_io.xcdatamodel; sourceTree = "<group>"; };
 		90C642AE234AC5C3008BC88D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,17 +64,17 @@
 		90C642A1234AC5C1008BC88D /* Piggy.io */ = {
 			isa = PBXGroup;
 			children = (
+				903E8D142361230A0058CECC /* Stash+CoreDataClass.swift */,
+				903E8D152361230A0058CECC /* Stash+CoreDataProperties.swift */,
 				90C642A2234AC5C1008BC88D /* AppDelegate.swift */,
-				903D739B234AE29B0023C1E5 /* TableViewController.swift */,
-				903D739D234B248E0023C1E5 /* CustomTableViewCell.swift */,
-				90C642A4234AC5C1008BC88D /* SceneDelegate.swift */,
+				903E8D122360C7060058CECC /* SceneDelegate.swift */,
+				903E8D0E2360BEE20058CECC /* ViewController.swift */,
 				90C642A8234AC5C1008BC88D /* Main.storyboard */,
+				903E8D102360C1120058CECC /* PersistenceService.swift */,
 				90C642AE234AC5C3008BC88D /* Assets.xcassets */,
 				90C642B0234AC5C3008BC88D /* LaunchScreen.storyboard */,
 				90C642B3234AC5C3008BC88D /* Info.plist */,
 				90C642AB234AC5C1008BC88D /* Piggy_io.xcdatamodeld */,
-				902EE0EA234B355D009F2DD2 /* Stash.swift */,
-				902EE0EC234B3EF9009F2DD2 /* Ledger.swift */,
 			);
 			path = Piggy.io;
 			sourceTree = "<group>";
@@ -150,13 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903E8D132360C7060058CECC /* SceneDelegate.swift in Sources */,
+				903E8D112360C1120058CECC /* PersistenceService.swift in Sources */,
 				90C642AD234AC5C1008BC88D /* Piggy_io.xcdatamodeld in Sources */,
-				903D739E234B248E0023C1E5 /* CustomTableViewCell.swift in Sources */,
+				903E8D162361230A0058CECC /* Stash+CoreDataClass.swift in Sources */,
+				903E8D172361230A0058CECC /* Stash+CoreDataProperties.swift in Sources */,
 				90C642A3234AC5C1008BC88D /* AppDelegate.swift in Sources */,
-				903D739C234AE29B0023C1E5 /* TableViewController.swift in Sources */,
-				902EE0ED234B3EF9009F2DD2 /* Ledger.swift in Sources */,
-				90C642A5234AC5C1008BC88D /* SceneDelegate.swift in Sources */,
-				902EE0EB234B355D009F2DD2 /* Stash.swift in Sources */,
+				903E8D0F2360BEE20058CECC /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

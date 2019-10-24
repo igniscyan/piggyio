@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="19A582a" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Stash" representedClassName="Stash" syncable="YES" codeGenerationType="class">
+    <entity name="Ledger" representedClassName="Ledger" syncable="YES" codeGenerationType="class">
+        <attribute name="attribute" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Stash" representedClassName="Stash" syncable="YES">
         <attribute name="dollarCounts" optional="YES" attributeType="Transformable"/>
         <attribute name="stashCurrency" optional="YES" attributeType="String"/>
         <attribute name="stashInitDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -8,6 +11,7 @@
         <attribute name="stashTotal" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Stash" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="Stash" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Ledger" positionX="-63" positionY="-27" width="128" height="58"/>
     </elements>
 </model>
