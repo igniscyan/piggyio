@@ -1,5 +1,5 @@
 # Piggy.Io
-## Full stack iOS senior project
+## Full stack iOS project
 
 
 ### Goals
