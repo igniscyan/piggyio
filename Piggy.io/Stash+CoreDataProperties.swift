@@ -22,5 +22,12 @@ extension Stash {
     @NSManaged public var stashInitDate: Date?
     @NSManaged public var stashName: String?
     @NSManaged public var stashTotal: Int32
+    @NSManaged public var ones: Int32
+    @NSManaged public var fives: Int32
+    @NSManaged public var tens: Int32
+    @NSManaged public var twenties: Int32
+    @NSManaged public var fifties: Int32
+    @NSManaged public var hundreds: Int32
+    
 
 }

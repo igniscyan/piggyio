@@ -9,13 +9,14 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     
-    
+
+
     @IBOutlet weak var tableView: UITableView!
     
     var stash = [Stash]()
-    
+    let stashSegueIdentifier = "CellToStashPage"
     override func viewDidLoad() {
         super.viewDidLoad()
         let fetchRequest: NSFetchRequest<Stash> = Stash.fetchRequest()
@@ -25,6 +26,10 @@ class ViewController: UIViewController {
             self.stash = stash
             self.tableView.reloadData()
         }   catch {print("Error fetching context")}
+        
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     @IBAction func onPlusTapped() {
@@ -33,28 +38,73 @@ class ViewController: UIViewController {
             textField.placeholder = "Name"
         }
         alert.addTextField { (textField) in
-            textField.placeholder = "Amount"
+            textField.placeholder = "Ones"
             textField.keyboardType = .numberPad
         }
         alert.addTextField { (textField) in
-            textField.placeholder = "1s"
+            textField.placeholder = "Fives"
             textField.keyboardType = .numberPad
         }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Tens"
+            textField.keyboardType = .numberPad
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Twenties"
+            textField.keyboardType = .numberPad
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Fifties"
+            textField.keyboardType = .numberPad
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Hundreds"
+            textField.keyboardType = .numberPad
+        }
+        
+        
         let action = UIAlertAction(title: "Post", style: .default) { (_) in
-            let name = alert.textFields!.first!.text!
-            let amount = alert.textFields!.last!.text!
-            print(name)
-            print(amount)
-            let stashContext = Stash(context: PersistenceService.context)
-            stashContext.stashName = name
-            stashContext.stashTotal = Int32(amount)!
-            PersistenceService.saveContext()
-            self.stash.append(stashContext)
-            self.tableView.reloadData()
+            if let textFields = alert.textFields{
+                let theTextFields = textFields as [UITextField]
+                let stashName = theTextFields[0].text
+                let ones = Int32(theTextFields[1].text!)!
+                let fives = Int32(theTextFields[2].text!)!
+                let tens = Int32(theTextFields[3].text!)!
+                let twenties = Int32(theTextFields[4].text!)!
+                let fifties = Int32(theTextFields[5].text!)!
+                let hundreds = Int32(theTextFields[6].text!)!
+                let stashContext = Stash(context: PersistenceService.context)
+                stashContext.stashName = stashName
+                stashContext.stashCurrency = "USD"
+                stashContext.stashInitDate = Date()
+                stashContext.ones = ones
+                stashContext.fives = fives
+                stashContext.tens = tens
+                stashContext.twenties = twenties
+                stashContext.fifties = fifties
+                stashContext.hundreds = hundreds
+                let stashValue : Int32 = (1 * ones) + (5 * fives) + (10 * tens) + (20 * twenties) + (50 * fifties) + (100 * hundreds)
+                stashContext.stashTotal = stashValue
+                PersistenceService.saveContext()
+                self.stash.append(stashContext)
+                self.tableView.reloadData()
+            }
+//            let name = alert.textFields!.first!.text!
+//            let amount = alert.textFields!.last!.text!
+//            print(name)
+//            print(amount)
+//            let stashContext = Stash(context: PersistenceService.context)
+//            stashContext.stashName = name
+//            stashContext.stashTotal = Int32(amount)!
+//            PersistenceService.saveContext()
+//            self.stash.append(stashContext)
+//            self.tableView.reloadData()
         }
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+    
+    
     
 
     /*
@@ -66,6 +116,24 @@ class ViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        print("PrepareForSegue")
+        if segue.identifier == "SegueViews",
+            let destination = segue.destination as? StashPageViewController,
+            let selectedIndex = tableView.indexPathForSelectedRow?.row
+        {
+            destination.pageString = stash[selectedIndex].stashName!
+            destination.totalMoney = stash[selectedIndex].stashTotal
+            destination.onesCount =  stash[selectedIndex].ones
+            destination.fivesCount = stash[selectedIndex].fives
+            destination.tensCount =  stash[selectedIndex].tens
+            destination.twentiesCount = stash[selectedIndex].twenties
+            destination.fiftiesCount =  stash[selectedIndex].fifties
+            destination.hundredsCount = stash[selectedIndex].hundreds
+        }
+       
+
+    }
 
 }
 
@@ -85,5 +153,23 @@ extension ViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = String(stash[indexPath.row].stashTotal)
         return cell
     }
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+            let item = stash[indexPath.row]
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "stashPage")
+            let stashVC = vc as! StashPageViewController
+            /* Try to setup stashVC's properties here */
+            stashVC.fiftiesCount = item.fifties
+            stashVC.hundredsCount = item.hundreds
+            stashVC.tensCount = item.tens
+        stashVC.fivesCount = item.fives
+        stashVC.onesCount = item.ones
+        stashVC.twentiesCount = item.twenties
+        stashVC.totalMoney = item.stashTotal
+            self.navigationController?.show(stashVC, sender: self)
+    }
     
+
 }

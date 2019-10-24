@@ -4,14 +4,19 @@
         <attribute name="attribute" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Stash" representedClassName="Stash" syncable="YES">
-        <attribute name="dollarCounts" optional="YES" attributeType="Transformable"/>
+        <attribute name="fifties" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="fives" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hundreds" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ones" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="stashCurrency" optional="YES" attributeType="String"/>
         <attribute name="stashInitDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="stashName" optional="YES" attributeType="String"/>
         <attribute name="stashTotal" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="tens" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="twenties" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Stash" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Stash" positionX="-63" positionY="-18" width="128" height="193"/>
         <element name="Ledger" positionX="-63" positionY="-27" width="128" height="58"/>
     </elements>
 </model>

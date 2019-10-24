@@ -12,6 +12,7 @@
 		903E8D132360C7060058CECC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D122360C7060058CECC /* SceneDelegate.swift */; };
 		903E8D162361230A0058CECC /* Stash+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D142361230A0058CECC /* Stash+CoreDataClass.swift */; };
 		903E8D172361230A0058CECC /* Stash+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D152361230A0058CECC /* Stash+CoreDataProperties.swift */; };
+		903E8D1923619F300058CECC /* StashPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D1823619F300058CECC /* StashPageViewController.swift */; };
 		90C642A3234AC5C1008BC88D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C642A2234AC5C1008BC88D /* AppDelegate.swift */; };
 		90C642AA234AC5C1008BC88D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90C642A8234AC5C1008BC88D /* Main.storyboard */; };
 		90C642AD234AC5C1008BC88D /* Piggy_io.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90C642AB234AC5C1008BC88D /* Piggy_io.xcdatamodeld */; };
@@ -25,6 +26,7 @@
 		903E8D122360C7060058CECC /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		903E8D142361230A0058CECC /* Stash+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stash+CoreDataClass.swift"; sourceTree = "<group>"; };
 		903E8D152361230A0058CECC /* Stash+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stash+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		903E8D1823619F300058CECC /* StashPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashPageViewController.swift; sourceTree = "<group>"; };
 		90C6429F234AC5C1008BC88D /* Piggy.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piggy.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C642A2234AC5C1008BC88D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90C642A9234AC5C1008BC88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,12 +66,13 @@
 		90C642A1234AC5C1008BC88D /* Piggy.io */ = {
 			isa = PBXGroup;
 			children = (
+				90C642A8234AC5C1008BC88D /* Main.storyboard */,
 				903E8D142361230A0058CECC /* Stash+CoreDataClass.swift */,
 				903E8D152361230A0058CECC /* Stash+CoreDataProperties.swift */,
 				90C642A2234AC5C1008BC88D /* AppDelegate.swift */,
 				903E8D122360C7060058CECC /* SceneDelegate.swift */,
 				903E8D0E2360BEE20058CECC /* ViewController.swift */,
-				90C642A8234AC5C1008BC88D /* Main.storyboard */,
+				903E8D1823619F300058CECC /* StashPageViewController.swift */,
 				903E8D102360C1120058CECC /* PersistenceService.swift */,
 				90C642AE234AC5C3008BC88D /* Assets.xcassets */,
 				90C642B0234AC5C3008BC88D /* LaunchScreen.storyboard */,
@@ -157,6 +160,7 @@
 				903E8D172361230A0058CECC /* Stash+CoreDataProperties.swift in Sources */,
 				90C642A3234AC5C1008BC88D /* AppDelegate.swift in Sources */,
 				903E8D0F2360BEE20058CECC /* ViewController.swift in Sources */,
+				903E8D1923619F300058CECC /* StashPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
