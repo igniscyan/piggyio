@@ -2,7 +2,7 @@
 //  Stash+CoreDataClass.swift
 //  Piggy.io
 //
-//  Created by Brandon Clark on 10/23/19.
+//  Created by Brandon Clark on 11/11/19.
 //  Copyright © 2019 cyanware. All rights reserved.
 //
 //

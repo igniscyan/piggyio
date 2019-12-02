@@ -7,26 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		902E34D023791897002CF846 /* LedgerEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902E34CE23791897002CF846 /* LedgerEntry+CoreDataClass.swift */; };
+		902E34D123791897002CF846 /* LedgerEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902E34CF23791897002CF846 /* LedgerEntry+CoreDataProperties.swift */; };
 		903E8D0F2360BEE20058CECC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D0E2360BEE20058CECC /* ViewController.swift */; };
 		903E8D112360C1120058CECC /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D102360C1120058CECC /* PersistenceService.swift */; };
 		903E8D132360C7060058CECC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D122360C7060058CECC /* SceneDelegate.swift */; };
-		903E8D162361230A0058CECC /* Stash+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D142361230A0058CECC /* Stash+CoreDataClass.swift */; };
-		903E8D172361230A0058CECC /* Stash+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D152361230A0058CECC /* Stash+CoreDataProperties.swift */; };
 		903E8D1923619F300058CECC /* StashPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903E8D1823619F300058CECC /* StashPageViewController.swift */; };
+		90BE0DD423794AF70097B1F1 /* Stash+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE0DD223794AF70097B1F1 /* Stash+CoreDataClass.swift */; };
+		90BE0DD523794AF70097B1F1 /* Stash+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BE0DD323794AF70097B1F1 /* Stash+CoreDataProperties.swift */; };
 		90C642A3234AC5C1008BC88D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C642A2234AC5C1008BC88D /* AppDelegate.swift */; };
 		90C642AA234AC5C1008BC88D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90C642A8234AC5C1008BC88D /* Main.storyboard */; };
 		90C642AD234AC5C1008BC88D /* Piggy_io.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90C642AB234AC5C1008BC88D /* Piggy_io.xcdatamodeld */; };
 		90C642AF234AC5C3008BC88D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C642AE234AC5C3008BC88D /* Assets.xcassets */; };
 		90C642B2234AC5C3008BC88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90C642B0234AC5C3008BC88D /* LaunchScreen.storyboard */; };
+		90EFDEF72394AEB000961F13 /* AddStashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EFDEF62394AEB000961F13 /* AddStashController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		902E34CE23791897002CF846 /* LedgerEntry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LedgerEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		902E34CF23791897002CF846 /* LedgerEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LedgerEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		903E8D0E2360BEE20058CECC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		903E8D102360C1120058CECC /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		903E8D122360C7060058CECC /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		903E8D142361230A0058CECC /* Stash+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stash+CoreDataClass.swift"; sourceTree = "<group>"; };
-		903E8D152361230A0058CECC /* Stash+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stash+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		903E8D1823619F300058CECC /* StashPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashPageViewController.swift; sourceTree = "<group>"; };
+		90BE0DD223794AF70097B1F1 /* Stash+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stash+CoreDataClass.swift"; sourceTree = "<group>"; };
+		90BE0DD323794AF70097B1F1 /* Stash+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stash+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		90C6429F234AC5C1008BC88D /* Piggy.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piggy.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C642A2234AC5C1008BC88D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90C642A9234AC5C1008BC88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,6 +39,7 @@
 		90C642AE234AC5C3008BC88D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90C642B1234AC5C3008BC88D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90C642B3234AC5C3008BC88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90EFDEF62394AEB000961F13 /* AddStashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStashController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +73,14 @@
 			isa = PBXGroup;
 			children = (
 				90C642A8234AC5C1008BC88D /* Main.storyboard */,
-				903E8D142361230A0058CECC /* Stash+CoreDataClass.swift */,
-				903E8D152361230A0058CECC /* Stash+CoreDataProperties.swift */,
+				902E34CE23791897002CF846 /* LedgerEntry+CoreDataClass.swift */,
+				902E34CF23791897002CF846 /* LedgerEntry+CoreDataProperties.swift */,
+				90BE0DD223794AF70097B1F1 /* Stash+CoreDataClass.swift */,
+				90BE0DD323794AF70097B1F1 /* Stash+CoreDataProperties.swift */,
 				90C642A2234AC5C1008BC88D /* AppDelegate.swift */,
 				903E8D122360C7060058CECC /* SceneDelegate.swift */,
 				903E8D0E2360BEE20058CECC /* ViewController.swift */,
+				90EFDEF62394AEB000961F13 /* AddStashController.swift */,
 				903E8D1823619F300058CECC /* StashPageViewController.swift */,
 				903E8D102360C1120058CECC /* PersistenceService.swift */,
 				90C642AE234AC5C3008BC88D /* Assets.xcassets */,
@@ -154,10 +163,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				903E8D132360C7060058CECC /* SceneDelegate.swift in Sources */,
+				902E34D023791897002CF846 /* LedgerEntry+CoreDataClass.swift in Sources */,
+				90EFDEF72394AEB000961F13 /* AddStashController.swift in Sources */,
 				903E8D112360C1120058CECC /* PersistenceService.swift in Sources */,
+				90BE0DD523794AF70097B1F1 /* Stash+CoreDataProperties.swift in Sources */,
 				90C642AD234AC5C1008BC88D /* Piggy_io.xcdatamodeld in Sources */,
-				903E8D162361230A0058CECC /* Stash+CoreDataClass.swift in Sources */,
-				903E8D172361230A0058CECC /* Stash+CoreDataProperties.swift in Sources */,
+				90BE0DD423794AF70097B1F1 /* Stash+CoreDataClass.swift in Sources */,
+				902E34D123791897002CF846 /* LedgerEntry+CoreDataProperties.swift in Sources */,
 				90C642A3234AC5C1008BC88D /* AppDelegate.swift in Sources */,
 				903E8D0F2360BEE20058CECC /* ViewController.swift in Sources */,
 				903E8D1923619F300058CECC /* StashPageViewController.swift in Sources */,
@@ -305,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PBHS37EYY2;
 				INFOPLIST_FILE = Piggy.io/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -322,6 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PBHS37EYY2;
 				INFOPLIST_FILE = Piggy.io/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

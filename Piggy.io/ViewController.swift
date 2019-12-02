@@ -12,29 +12,63 @@ import CoreData
 class ViewController: UIViewController, UITableViewDelegate {
     
 
-
+    @IBOutlet weak var totalCashLabel: UILabel!
+    @IBOutlet weak var netWeeklyTotalLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var stash = [Stash]()
-    let stashSegueIdentifier = "CellToStashPage"
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fetchRequest: NSFetchRequest<Stash> = Stash.fetchRequest()
+        let stashFetchRequest: NSFetchRequest<Stash> = Stash.fetchRequest()
         // Do any additional setup after loading the view.
         do {
-        let stash = try PersistenceService.context.fetch(fetchRequest)
+        let stash = try PersistenceService.context.fetch(stashFetchRequest)
             self.stash = stash
             self.tableView.reloadData()
         }   catch {print("Error fetching context")}
-        
-        
+        //MARK: Ledger allocation
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
+    
     @IBAction func onPlusTapped() {
-        let alert = UIAlertController(title: "Add Stash", message: nil , preferredStyle: .alert)
-        alert.addTextField { (textField) in
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "addStash")
+        let addVC = vc as! AddStashController
+        /* Try to setup stashVC's properties here */
+        
+        self.navigationController?.show(addVC, sender: self)
+        
+        
+        /*let alertController = UIAlertController(title: "\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+
+         let margin:CGFloat = 10.0
+         let rect = CGRect(x: margin, y: margin, width: alertController.view.bounds.size.width - margin * 4.0, height: 120)
+         let customView = UIView(frame: rect)
+
+         customView.backgroundColor = .green
+         alertController.view.addSubview(customView)
+        
+         var stepper = UIStepper()
+        customView.addSubview(stepper)
+        
+        
+        
+
+         let somethingAction = UIAlertAction(title: "Something", style: .default, handler: {(alert: UIAlertAction!) in print("something")})
+
+         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
+
+         alertController.addAction(somethingAction)
+         alertController.addAction(cancelAction)
+
+         DispatchQueue.main.async {
+             self.present(alertController, animated: true, completion:{})
+         }*/
+        
+        /*alert.addTextField { (textField) in
             textField.placeholder = "Name"
         }
         alert.addTextField { (textField) in
@@ -60,10 +94,10 @@ class ViewController: UIViewController, UITableViewDelegate {
         alert.addTextField { (textField) in
             textField.placeholder = "Hundreds"
             textField.keyboardType = .numberPad
-        }
+        }*/
         
         
-        let action = UIAlertAction(title: "Post", style: .default) { (_) in
+        /*let action = UIAlertAction(title: "Post", style: .default) { (_) in
             if let textFields = alert.textFields{
                 let theTextFields = textFields as [UITextField]
                 let stashName = theTextFields[0].text
@@ -74,6 +108,11 @@ class ViewController: UIViewController, UITableViewDelegate {
                 let fifties = Int32(theTextFields[5].text!)!
                 let hundreds = Int32(theTextFields[6].text!)!
                 let stashContext = Stash(context: PersistenceService.context)
+                //let managedContext = PersistenceService.persistentContainer.viewContext
+                //let ledgerEntity = NSEntityDescription.entity(forEntityName: "LedgerEntry", in:managedContext)
+                let ledgerContext = LedgerEntry(context:PersistenceService.context)
+                
+                //Store information to context
                 stashContext.stashName = stashName
                 stashContext.stashCurrency = "USD"
                 stashContext.stashInitDate = Date()
@@ -85,6 +124,17 @@ class ViewController: UIViewController, UITableViewDelegate {
                 stashContext.hundreds = hundreds
                 let stashValue : Int32 = (1 * ones) + (5 * fives) + (10 * tens) + (20 * twenties) + (50 * fifties) + (100 * hundreds)
                 stashContext.stashTotal = stashValue
+                //MIGHT NEED THIS LATER: let initLedger = stashContext.mutableSetValue(forKey: #keyPath(Stash.ledgerEntry))
+                //
+                //On initialization, create the first ledgerEntry that stores the starting amount of the stash and the first date input for the stash.
+                ledgerContext.stash = stashContext
+                ledgerContext.transactionAmount = stashValue
+                ledgerContext.transactionDate = Date()
+                ledgerContext.transactionMemo = "Stash initialization"
+                ledgerContext.transactionFinalTotal = stashValue
+                
+                
+                stashContext.addToLedgerEntry(ledgerContext)
                 PersistenceService.saveContext()
                 self.stash.append(stashContext)
                 self.tableView.reloadData()
@@ -102,6 +152,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         }
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+ */
     }
     
     
@@ -116,7 +167,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+ /*   override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         print("PrepareForSegue")
         if segue.identifier == "SegueViews",
             let destination = segue.destination as? StashPageViewController,
@@ -133,7 +184,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         }
        
 
-    }
+    }*/
 
 }
 
@@ -153,7 +204,7 @@ extension ViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = String(stash[indexPath.row].stashTotal)
         return cell
     }
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    /*public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
             
             let item = stash[indexPath.row]
@@ -164,12 +215,12 @@ extension ViewController: UITableViewDataSource {
             stashVC.fiftiesCount = item.fifties
             stashVC.hundredsCount = item.hundreds
             stashVC.tensCount = item.tens
-        stashVC.fivesCount = item.fives
-        stashVC.onesCount = item.ones
-        stashVC.twentiesCount = item.twenties
-        stashVC.totalMoney = item.stashTotal
+            stashVC.fivesCount = item.fives
+            stashVC.onesCount = item.ones
+            stashVC.twentiesCount = item.twenties
+            stashVC.totalMoney = item.stashTotal
             self.navigationController?.show(stashVC, sender: self)
-    }
+    }*/
     
 
 }

@@ -11,7 +11,7 @@ import CoreData
 
 class StashPageViewController: UIViewController {
     //Declaring Labels
-    @IBOutlet weak var pageName: UILabel!
+    /*@IBOutlet weak var pageName: UILabel!
     @IBOutlet weak var onesLabel: UILabel!
     @IBOutlet weak var fivesLabel: UILabel!
     @IBOutlet weak var tensLabel: UILabel!
@@ -20,6 +20,7 @@ class StashPageViewController: UIViewController {
     @IBOutlet weak var hundredsLabel: UILabel!
     @IBOutlet weak var totalsLabel: UILabel!
     
+    var selectedStash: Stash
     var totalMoney: Int32 = 0
     var pageString: String = ""
     var fiftiesCount: Int32 = 0
@@ -29,11 +30,11 @@ class StashPageViewController: UIViewController {
     var hundredsCount: Int32 = 0
     var fivesCount: Int32 = 0
     //Declaring Buttons
-    
+    */
    
     
     override func viewWillAppear(_ animated: Bool) {
-
+        /*
         pageName.text = pageString
         totalsLabel.text = String(totalMoney)
         onesLabel.text = String(onesCount)
@@ -42,6 +43,7 @@ class StashPageViewController: UIViewController {
         twentiesLabel.text = String(twentiesCount)
         fiftiesLabel.text = String(fiftiesCount)
         hundredsLabel.text = String(hundredsCount)
+        */
         
     }
     

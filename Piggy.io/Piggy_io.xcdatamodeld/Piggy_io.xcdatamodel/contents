@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="19A582a" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Ledger" representedClassName="Ledger" syncable="YES" codeGenerationType="class">
-        <attribute name="attribute" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="LedgerEntry" representedClassName="LedgerEntry" parentEntity="Stash" syncable="YES">
+        <attribute name="transactionAmount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="transactionDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="transactionFinalTotal" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="transactionMemo" optional="YES" attributeType="String"/>
+        <relationship name="stash" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stash" inverseName="ledgerEntry" inverseEntity="Stash"/>
     </entity>
     <entity name="Stash" representedClassName="Stash" syncable="YES">
         <attribute name="fifties" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -14,9 +18,10 @@
         <attribute name="stashTotal" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tens" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="twenties" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ledgerEntry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LedgerEntry" inverseName="stash" inverseEntity="LedgerEntry"/>
     </entity>
     <elements>
-        <element name="Stash" positionX="-63" positionY="-18" width="128" height="193"/>
-        <element name="Ledger" positionX="-63" positionY="-27" width="128" height="58"/>
+        <element name="LedgerEntry" positionX="-384.85546875" positionY="-95.828125" width="128" height="118"/>
+        <element name="Stash" positionX="-16.12890625" positionY="-98.3515625" width="128" height="208"/>
     </elements>
 </model>
